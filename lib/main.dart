@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'screens/splash_screen.dart';
 
 void main() {
-  runApp(const FitnessApp());
+  runApp(const MyApp());
 }
 
-class FitnessApp extends StatelessWidget {
-  const FitnessApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Fitness App',
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.black,
-        fontFamily: 'Poppins',
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.black,
+          brightness: Brightness.dark,
+        ),
       ),
-      home: const SplashScreen(),
     );
   }
 }
