@@ -18,6 +18,21 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
         ),
       ),
+
+      home: Scaffold(
+        appBar: AppBar(
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Hello Jenna,', style: TextStyle(fontSize: 25)),
+              Text(
+                'Lets start excercising',
+                style: TextStyle(fontSize: 18, color: Colors.white70),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
