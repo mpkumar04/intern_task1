@@ -12,7 +12,7 @@ class SplashScreen extends StatelessWidget {
           // Background Image
           Positioned.fill(
             child: Image.asset(
-              'assets/images/splash_bg.jpg', // use your image name
+              'assets/images/splash.jpg', // use your image name
               fit: BoxFit.cover,
             ),
           ),
@@ -35,7 +35,7 @@ class SplashScreen extends StatelessWidget {
                     'Join the Fitness\nClub',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 28,
+                      fontSize: 40,
                       fontWeight: FontWeight.bold,
                       height: 1.2,
                     ),
