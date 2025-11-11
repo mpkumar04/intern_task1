@@ -125,7 +125,7 @@ class DashboardScreen extends StatelessWidget {
   Widget _buildSmallImage(String imagePath) {
     return Container(
       margin: const EdgeInsets.only(right: 12),
-      width: 111,
+      width: 110,
       height: 90,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
