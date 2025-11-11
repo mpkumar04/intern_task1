@@ -11,9 +11,9 @@ class AppTextStyles {
   );
 
   static const TextStyle heading2 = TextStyle(
-    fontFamily: AppFonts.primary,
+    fontFamily: AppFonts.third,
     fontSize: 18,
-    // fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w600,
     color: AppColors.white,
   );
 
@@ -31,6 +31,13 @@ class AppTextStyles {
 
   static const TextStyle button = TextStyle(
     fontFamily: AppFonts.primary,
+    fontSize: 14,
+    // fontWeight: FontWeight.w600,
+    color: AppColors.white,
+  );
+
+  static const TextStyle tButton = TextStyle(
+    fontFamily: AppFonts.fourth,
     fontSize: 14,
     // fontWeight: FontWeight.w600,
     color: AppColors.white,

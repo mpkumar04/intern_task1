@@ -107,14 +107,14 @@ class DashboardScreen extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 12),
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.red600,
+              backgroundColor: AppColors.red800,
               padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 8),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(25),
               ),
             ),
             onPressed: () {},
-            child: const Text("Start", style: AppTextStyles.button),
+            child: const Text("Start", style: AppTextStyles.tButton),
           ),
         ),
       ),
@@ -125,7 +125,7 @@ class DashboardScreen extends StatelessWidget {
   Widget _buildSmallImage(String imagePath) {
     return Container(
       margin: const EdgeInsets.only(right: 12),
-      width: 110,
+      width: 111,
       height: 90,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
@@ -175,26 +175,20 @@ class DashboardScreen extends StatelessWidget {
             end: Alignment.topCenter,
           ),
         ),
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(title, style: AppTextStyles.heading2),
-            const SizedBox(height: 10),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.red500,
-                foregroundColor: AppColors.white,
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(25),
-                ),
+        padding: const EdgeInsets.all(10),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(title, style: AppTextStyles.heading2),
+              const SizedBox(height: 10),
+              TextButton(
+                onPressed: () {},
+                child: const Text("Explore now", style: AppTextStyles.tButton),
               ),
-              onPressed: () {},
-              child: const Text("Explore now", style: AppTextStyles.button),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
