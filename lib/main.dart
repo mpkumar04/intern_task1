@@ -32,6 +32,26 @@ class MyApp extends StatelessWidget {
             ],
           ),
         ),
+
+        body: Padding(
+          padding: EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(vertical: 10.0),
+                child: Card(
+                  child: Padding(padding: EdgeInsets.all(20.0),
+                child: Column(
+                  children: [
+                    Text("Hello"),
+                    Text("des"),
+                  ],
+                ),)),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
