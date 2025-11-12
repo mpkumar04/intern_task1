@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../core/theme/colors.dart';
-import '../core/theme/text_styles.dart';
+// import '../core/theme/text_styles.dart';
 import '../core/utils/app_sizes.dart';
 import '../widgets/primary_button.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../core/theme/colors.dart';
-import '../core/theme/text_styles.dart';
-import '../core/utils/app_sizes.dart';
+// import '../core/theme/text_styles.dart';
+// import '../core/utils/app_sizes.dart';
 
 class ExerciseCard extends StatelessWidget {
   final String imagePath;
