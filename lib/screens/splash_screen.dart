@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import '../core/theme/colors.dart';
+import '../core/theme/text_styles.dart';
+import '../core/utils/app_sizes.dart';
+import '../widgets/primary_button.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -6,27 +11,20 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: AppColors.black,
       body: Stack(
         children: [
-          // Background Image
           Positioned.fill(
             child: Image.asset(
-              'assets/images/splash.jpg', // use your image name
+              'assets/images/splash.jpg',
               fit: BoxFit.cover,
             ),
           ),
-
-          // Overlay for dark effect
-          Container(
-            color: Colors.black.withOpacity(0.4),
-          ),
-
-          // Text and Button
+          Container(color: Colors.black.withOpacity(0.4)),
           Align(
             alignment: Alignment.bottomLeft,
             child: Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(AppSizes.lg),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,36 +35,15 @@ class SplashScreen extends StatelessWidget {
                       color: Colors.white,
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
-                      height: 1.2,
+                      height: 1.1,
+                      fontFamily: 'Poppins',
                     ),
                   ),
-                  const SizedBox(height: 20),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 30, vertical: 12),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                    ),
-                    onPressed: () {
-                      // TODO: Navigate to next screen
-                    },
-                    child: const Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Start Training',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                          ),
-                        ),
-                        SizedBox(width: 8),
-                        Icon(Icons.arrow_forward, color: Colors.white),
-                      ],
-                    ),
+                  const SizedBox(height: AppSizes.md),
+                  PrimaryButton(
+                    text: 'Start Training',
+                    onPressed: () => GoRouter.of(context).go('/dashboard'),
+                    width: AppSizes.wPct(context, 0.65),
                   ),
                 ],
               ),
