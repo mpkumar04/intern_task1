@@ -15,10 +15,7 @@ class SplashScreen extends StatelessWidget {
       body: Stack(
         children: [
           Positioned.fill(
-            child: Image.asset(
-              'assets/images/splash.jpg',
-              fit: BoxFit.cover,
-            ),
+            child: Image.asset('assets/images/splash.jpg', fit: BoxFit.cover),
           ),
           Container(color: Colors.black.withOpacity(0.4)),
           Align(
@@ -33,7 +30,7 @@ class SplashScreen extends StatelessWidget {
                     'Join the Fitness\nClub',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 40,
+                      fontSize: 35,
                       fontWeight: FontWeight.bold,
                       height: 1.1,
                       fontFamily: 'Poppins',
@@ -44,6 +41,13 @@ class SplashScreen extends StatelessWidget {
                     text: 'Start Training',
                     onPressed: () => GoRouter.of(context).go('/dashboard'),
                     width: AppSizes.wPct(context, 0.65),
+                  ),
+
+                  Container(
+                    padding: EdgeInsets.all(8),
+                    de ,
+                    color: AppColors.red700,
+                    child: Icon(Icons.play_circle_fill_rounded),
                   ),
                 ],
               ),
