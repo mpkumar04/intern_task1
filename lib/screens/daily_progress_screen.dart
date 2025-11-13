@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../core/theme/colors.dart';
 import '../core/theme/text_styles.dart';
-import 'package:go_router/go_router.dart';
 
 class DailyProgressScreen extends StatelessWidget {
   const DailyProgressScreen({super.key});
@@ -21,20 +21,21 @@ class DailyProgressScreen extends StatelessWidget {
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: [Color(0xFF7A0000), Color.fromARGB(255, 0, 0, 0)],
+                    colors: [
+                      Color(0xFF7A0000),
+                      Color.fromARGB(255, 0, 0, 0),
+                    ],
                   ),
                 ),
                 child: Stack(
                   children: [
-                    // Back button
+                    // ✅ Back button (navigates to DailyWorkoutScreen)
                     Positioned(
                       top: 12,
                       left: 12,
                       child: IconButton(
                         icon: const Icon(Icons.arrow_back, color: Colors.white),
-                        onPressed: () => GoRouter.of(
-                          context,
-                        ).pop(), // goes back to daily workout
+                        onPressed: () => GoRouter.of(context).go('/daily-workout'),
                       ),
                     ),
 
@@ -124,7 +125,10 @@ class _ProgressStat extends StatelessWidget {
         ),
         Text(
           title,
-          style: const TextStyle(color: Colors.white70, fontSize: 12),
+          style: const TextStyle(
+            color: Colors.white70,
+            fontSize: 12,
+          ),
         ),
       ],
     );
@@ -142,7 +146,10 @@ class _BottomInfo extends StatelessWidget {
       children: [
         Icon(icon, color: Colors.white, size: 20),
         const SizedBox(width: 6),
-        Text(label, style: const TextStyle(color: Colors.white, fontSize: 14)),
+        Text(
+          label,
+          style: const TextStyle(color: Colors.white, fontSize: 14),
+        ),
       ],
     );
   }

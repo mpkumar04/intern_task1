@@ -32,8 +32,7 @@ class DailyWorkoutScreen extends StatelessWidget {
                   top: 40,
                   left: 20,
                   child: GestureDetector(
-                    onTap: () =>
-                        GoRouter.of(context).pop(), // goes back to dashboards
+                    onTap: () => GoRouter.of(context).go('/dashboard'),
                     child: CircleAvatar(
                       backgroundColor: Colors.black.withOpacity(0.4),
                       child: const Icon(Icons.arrow_back, color: Colors.white),
