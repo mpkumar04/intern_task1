@@ -126,15 +126,6 @@ class DailyWorkoutScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-
-                  // Container(
-                  //   margin: const EdgeInsets.only(right: 6),
-                  //   decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.white),
-                  //   child: const Padding(
-                  //     padding: EdgeInsets.all(6.0),
-                  //     child: Icon(Icons.play_arrow, color: Colors.red, size: 28),
-                  //   ),
-                  // ),
                 ],
               ),
             ),
@@ -182,7 +173,7 @@ class DailyWorkoutScreen extends StatelessWidget {
             children: [
               const Text(
                 'Round 01',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16,color: AppColors.black,),
               ),
               const SizedBox(height: 10),
               _buildWorkoutItem(
@@ -224,13 +215,14 @@ class DailyWorkoutScreen extends StatelessWidget {
                   style: const TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 15,
+                    color: Color.fromARGB(255, 0, 0, 0),
                   ),
                 ),
-                const Text('3x', style: TextStyle(color: Colors.grey)),
+                const Text('3x', style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
               ],
             ),
           ),
-          const Icon(Icons.play_circle_fill, color: Colors.red, size: 36),
+          const Icon(Icons.play_circle_fill, color: AppColors.red700, size: 36),
         ],
       ),
     );
