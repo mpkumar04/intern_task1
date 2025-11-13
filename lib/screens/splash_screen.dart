@@ -39,17 +39,17 @@ class SplashScreen extends StatelessWidget {
                   const SizedBox(height: AppSizes.md),
 
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       PrimaryButton(
                         text: 'Start Training',
                         onPressed: () => GoRouter.of(context).go('/dashboard'),
                         width: AppSizes.wPct(context, 0.65),
                       ),
-                      Container(width: 20, height: 5, color: AppColors.red700),
+                      Container(width: 28, height: 5, color: AppColors.red700),
 
                       Container(
-                        padding: EdgeInsets.all(12),
+                        padding: EdgeInsets.all(13),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(30)),
                           color: AppColors.red700,
