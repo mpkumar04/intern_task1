@@ -43,7 +43,8 @@ class SplashScreen extends StatelessWidget {
                     children: [
                       PrimaryButton(
                         text: 'Start Training',
-                        onPressed: () => GoRouter.of(context).go('/dashboard'),
+                        onPressed: () =>
+                            GoRouter.of(context).push('/dashboard'),
                         width: AppSizes.wPct(context, 0.65),
                       ),
                       Container(width: 28, height: 5, color: AppColors.red700),

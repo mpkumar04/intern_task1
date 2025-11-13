@@ -13,7 +13,7 @@ class DailyWorkoutScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Top image header + back
+            // ✅ Top image header + back
             Stack(
               children: [
                 ClipRRect(
@@ -28,19 +28,18 @@ class DailyWorkoutScreen extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-
                 Positioned(
                   top: 40,
                   left: 20,
                   child: GestureDetector(
-                    onTap: () => GoRouter.of(context).go('/dashboard'),
+                    onTap: () =>
+                        GoRouter.of(context).pop(), // goes back to dashboards
                     child: CircleAvatar(
                       backgroundColor: Colors.black.withOpacity(0.4),
                       child: const Icon(Icons.arrow_back, color: Colors.white),
                     ),
                   ),
                 ),
-
                 const Positioned(
                   bottom: 20,
                   left: 20,
@@ -58,6 +57,7 @@ class DailyWorkoutScreen extends StatelessWidget {
 
             const SizedBox(height: 20),
 
+            // ✅ Horizontal categories
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: SingleChildScrollView(
@@ -75,19 +75,24 @@ class DailyWorkoutScreen extends StatelessWidget {
 
             const SizedBox(height: 20),
 
+            // ✅ Start Training Button
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Stack(
                 alignment: Alignment.centerRight,
                 children: [
                   GestureDetector(
-                    onTap: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text("Training Started!")),
+                    onTap: () async {
+                      // Preload the images used in DailyProgressScreen
+                      await precacheImage(
+                        const AssetImage('assets/images/model.png'),
+                        context,
                       );
+
+                      // Navigate instantly after caching
+                      GoRouter.of(context).go('/daily-progress');
                     },
                     child: Row(
-                      // ✅ Use 'child:' here
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Container(
@@ -173,7 +178,11 @@ class DailyWorkoutScreen extends StatelessWidget {
             children: [
               const Text(
                 'Round 01',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16,color: AppColors.black,),
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  color: AppColors.black,
+                ),
               ),
               const SizedBox(height: 10),
               _buildWorkoutItem(
@@ -215,10 +224,10 @@ class DailyWorkoutScreen extends StatelessWidget {
                   style: const TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 15,
-                    color: Color.fromARGB(255, 0, 0, 0),
+                    color: Colors.black,
                   ),
                 ),
-                const Text('3x', style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
+                const Text('3x', style: TextStyle(color: Colors.black)),
               ],
             ),
           ),

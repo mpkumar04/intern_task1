@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'app_router.dart';
-import 'core/theme/colors.dart';
+import '/app_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,16 +10,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final router = AppRouter.router;
-
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Fitness App',
-      theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: AppColors.black,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      routerConfig: router,
+      theme: ThemeData.dark(),
+      routerConfig: AppRouter.router,
     );
   }
 }

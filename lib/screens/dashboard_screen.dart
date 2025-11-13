@@ -26,20 +26,26 @@ class DashboardScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(child: ExerciseCard(
-                  imagePath: 'assets/images/mCard1.jpg',
-                  onStart: () {
-                    // first card behavior — keep as original (snack or other)
-                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('First card tapped')));
-                  },
-                )),
+                Expanded(
+                  child: ExerciseCard(
+                    imagePath: 'assets/images/mCard1.jpg',
+                    onStart: () {
+                      // first card behavior — keep as original (snack or other)
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('First card tapped')),
+                      );
+                    },
+                  ),
+                ),
                 const SizedBox(width: 12),
-                Expanded(child: ExerciseCard(
-                  imagePath: 'assets/images/mCard2.jpg',
-                  onStart: () {
-                    GoRouter.of(context).go('/daily-workout');
-                  },
-                )),
+                Expanded(
+                  child: ExerciseCard(
+                    imagePath: 'assets/images/mCard2.jpg',
+                    onStart: () {
+                      GoRouter.of(context).push('/daily-workout');
+                    },
+                  ),
+                ),
               ],
             ),
 
@@ -60,9 +66,15 @@ class DashboardScreen extends StatelessWidget {
 
             const SizedBox(height: 30),
 
-            _largeCard('assets/images/personal_trainer.jpg', 'Find me a personal Trainer'),
+            _largeCard(
+              'assets/images/personal_trainer.jpg',
+              'Find me a personal Trainer',
+            ),
             const SizedBox(height: 18),
-            _largeCard('assets/images/group_class.jpg', 'Find me group classes'),
+            _largeCard(
+              'assets/images/group_class.jpg',
+              'Find me group classes',
+            ),
           ],
         ),
       ),
@@ -107,7 +119,10 @@ class DashboardScreen extends StatelessWidget {
               const SizedBox(height: 10),
               TextButton(
                 onPressed: () {},
-                child: const Text("Explore now", style: TextStyle(color: Colors.white)),
+                child: const Text(
+                  "Explore now",
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ],
           ),
