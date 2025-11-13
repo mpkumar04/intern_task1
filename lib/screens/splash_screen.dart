@@ -37,17 +37,26 @@ class SplashScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: AppSizes.md),
-                  PrimaryButton(
-                    text: 'Start Training',
-                    onPressed: () => GoRouter.of(context).go('/dashboard'),
-                    width: AppSizes.wPct(context, 0.65),
-                  ),
 
-                  Container(
-                    padding: EdgeInsets.all(8),
-                    de ,
-                    color: AppColors.red700,
-                    child: Icon(Icons.play_circle_fill_rounded),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      PrimaryButton(
+                        text: 'Start Training',
+                        onPressed: () => GoRouter.of(context).go('/dashboard'),
+                        width: AppSizes.wPct(context, 0.65),
+                      ),
+                      Container(width: 20, height: 5, color: AppColors.red700),
+
+                      Container(
+                        padding: EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                          color: AppColors.red700,
+                        ),
+                        child: Icon(Icons.play_circle_fill_rounded),
+                      ),
+                    ],
                   ),
                 ],
               ),
