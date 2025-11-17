@@ -95,7 +95,7 @@ class DailyWorkoutScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Container(
-                          width: 250,
+                          width: 280,
                           height: 45,
                           decoration: BoxDecoration(
                             color: AppColors.red700,
@@ -112,7 +112,7 @@ class DailyWorkoutScreen extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          width: 32,
+                          width: 34,
                           height: 5,
                           color: AppColors.red700,
                         ),

@@ -47,7 +47,7 @@ class SplashScreen extends StatelessWidget {
                             GoRouter.of(context).push('/dashboard'),
                         width: AppSizes.wPct(context, 0.65),
                       ),
-                      Container(width: 28, height: 5, color: AppColors.red700),
+                      Container(width: 38, height: 5, color: AppColors.red700),
 
                       Container(
                         padding: EdgeInsets.all(13),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../core/theme/colors.dart';
-import '../core/theme/text_styles.dart';
+// import '../core/theme/text_styles.dart';
 
 class DailyProgressScreen extends StatelessWidget {
   const DailyProgressScreen({super.key});
